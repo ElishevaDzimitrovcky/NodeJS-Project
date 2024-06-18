@@ -1,0 +1,10 @@
+[{
+  "_id": 10,
+  "Location": "Jerusalem",
+  "Description": "car stoppped in the middle of a high-way",
+  "PhoneNumber": "0523956784",
+  "Status": "waiting",
+  "PeopleStuck": 7,
+  "VolunteerCode": 1,
+  "PriorityLevel": "medium"
+}]
