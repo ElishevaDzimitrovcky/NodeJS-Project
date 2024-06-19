@@ -36,10 +36,12 @@ class BaseController {
     async insert(req, res, next) {
         try {
             const response = await this.service.insert(req.body);
+            console.log("base controller", response)
             if (response) { 
+                console.log("inserted", response)
                 return res.status(201).json(response); 
             }
-            return res.status(404).json({ message: 'Not Found' });
+            return res.status(404).json({ message: 'didnt add' });
         }
         catch (error) {
             next(error);

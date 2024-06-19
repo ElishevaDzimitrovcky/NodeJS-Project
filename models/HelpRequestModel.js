@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const HelpRequest = new Schema({
-    // id: String,
+    id: String,
     location: String,
     description: String,
     phoneNumber: String,

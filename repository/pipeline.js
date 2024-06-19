@@ -1,8 +1,7 @@
-export default function addPipeLine() {
-db.getCollection('HelpRequest').aggregate(
-    // const pipeline =
+export default function aggregation(subPipeline){
+    const pipeline =
     [
-      { $match: { Status: 'waiting' } },
+      // { $match: { Status: 'waiting' } },
       {
         $lookup: {
           from: 'Status',
@@ -45,6 +44,11 @@ db.getCollection('HelpRequest').aggregate(
           currentLocation: 0
         }
       }
-    ],
-    { maxTimeMS: 60000, allowDiskUse: true });
+    ]
+
+    subPipeline.forEach(element => {
+      pipeline.push(element);
+    });
+    
+    return pipeline;
 }

@@ -3,35 +3,25 @@ class BaseService {
         this.repo = repo;
     }
 
-    async getAll() {
-        // try {
-        //     const response = await this.options.getList(req.query);
-        //     return response.status(response.statusCode).json(response);
-        // } catch (error) {
-        //    next(error);
-        // }
-        return await this.repo.getAll();
+    async getAll(filter) {
+        return await this.repo.getAll(filter);
     }
 
-    async getById() {
-        try {
-            const { id } = req.params;
-            const response = await this.options.getById(id);
-            return response.status(response.statusCode).json(response);
-        } catch (error) {
-            next(error);
-        }
+    async getById(id) {
+            let response = await this.repo.getById(id);
+            return response;
     }
 
-    async insert(newData) {
-        try {
-            const response = await this.options.create(newData.body);
-            return response.status(response.statusCode).json(response);
-        }
-        catch (error) {
-            next(error);
-        }
-    }
+    // async insert(newData) {
+    //     try {
+    //         let response = await this.repo.insert(newData);
+    //         console.log(`Inserted id: why`, newData);
+    //         return response;
+    //     }
+    //     catch (error) {
+    //         next(error);
+    //     }
+    // }
 }
 
 export default BaseService;

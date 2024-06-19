@@ -13,9 +13,7 @@ app.use('/helpRequests', HelpRequestRouter);
 app.use('/volunteers', VolunteerRouter);
 app.use('/', (req, res) => {
     res.send('welcome to our api');
-    // res.status(200).json({ message: 'Hello World' });
 })
-// .catch
 
 app.listen(port, hostName, () => {
     console.log(`Server is running on http://${hostName}:${port}`);
